@@ -3,7 +3,7 @@
 - Language : Java
 - Tools : Apache NetBeans IDE 
 - Database : Mysql
-- 형성관리 : Smartgit
+- 형상관리 : Smartgit
 ### 사용자 
 - 관리자 : 회원가입 관리 (회원 정보 추가, 삭제, 수정), 운동 구성 관리 (추가, 삭제, 수정)
 - 트레이너 : 회원 정보 조회, 운동 구성 및 회원 식단 설정, 회원에게 공지사항 알림 제공
