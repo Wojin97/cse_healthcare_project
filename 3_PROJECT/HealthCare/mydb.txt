@@ -1,0 +1,117 @@
+
+create table admin
+(
+	user_id 	varchar(10) 	not null,
+    	user_pw     varchar(10)    not null,
+	user_name 	varchar(20) 	not null,
+	
+	constraint pk_admin primary key(user_id)
+);
+
+create table health
+(
+    health_name     varchar(20)    not null,
+    
+    constraint pk_health primary key(health_name)
+);
+
+create table member_
+(
+	user_id 	    varchar(10) 	not null,
+    	user_name 	    varchar(20) 	not null,
+    	user_date            varchar(20) 	not null,
+	user_height 	int 	not null,
+   	 user_weight     int     not null,
+    	user_BMI        float   not null,
+
+    	constraint  fk_member_ foreign key(user_id) references admin(user_id)
+	
+);
+create table member_change
+(
+	user_id 	    varchar(10) 	not null,
+    	user_name 	    varchar(20) 	not null,
+    	user_date            varchar(20) 	not null,
+	user_C_height 	int 	not null,
+    	user_C_weight   int     not null,
+    	user_C_BMI      float   not null,
+
+   	constraint  fk_member_change foreign key(user_id) references admin(user_id)
+
+);
+
+create table trainer
+(
+	user_id 	    varchar(10) 	not null,
+    	user_name 	    varchar(20) 	not null,
+    	health_name     varchar(20)    not null,
+	health_set	    int  	not null,
+    	health_count    int     not null,
+    	health_time     int   not null,
+
+    	constraint  fk_trainer1 foreign key(user_id) references admin(user_id),
+    	constraint  fk_trainer2 foreign key(health_name) references health(health_name)
+);
+create table diet
+(
+	user_id 	varchar(10) 	not null,
+    	user_name 	varchar(20) 	not null,
+    	week        varchar(10) 	not null,
+    	Breakfast  	    varchar(30) 	not null,
+    	lunch           varchar(30) 	not null,
+    	dinner         varchar(30) 	not null,
+    	total_kcal        int,
+    
+   	constraint  fk_diet foreign key(user_id) references admin(user_id)
+);
+create table member_goal
+(
+	user_id 	    varchar(10) 	not null,
+    	health_goal     varchar(20)    not null,
+    	weektime        varchar(20)    not null,
+    	Monday          varchar(10) 	not null,
+    	Tuesday         varchar(10) 	not null,
+    	Wednesday       varchar(10) 	not null,       
+    	Thursday        varchar(10) 	not null,
+	Friday          varchar(10) 	not null,
+   	Saturday        varchar(10) 	not null,
+    	Sunday          varchar(10) 	not null,
+    
+    	constraint  fk_member_goal1 foreign key(user_id) references admin(user_id)
+);
+insert into admin values('t123', '1234', '한슬기') ;
+insert into admin values('h111', '1234', '정원진') ;
+insert into admin values('a123', '1234', '정문주') ;
+insert into admin values('h222', '1234', '김예진') ;
+
+insert into member_ values('h111', '정원진','2020/5/13', 178, 65, 20.2) ;
+insert into member_ values('h222', '김예진','2020/5/24', 160, 48, 30.2) ;
+
+insert into health values('윗몸일으키기') ;
+insert into health values('팔굽혀펴기') ;
+
+insert into trainer values('h111','정원진','윗몸일으키기',4,12,60,0) ;
+insert into trainer values('h111','정원진','팔굽혀펴기',4,12,60,0) ;
+insert into trainer values('h222','김예진','윗몸일으키기',4,12,60,0) ;
+insert into trainer values('h222','김예진','팔굽혀펴기',4,12,60,0) ;
+
+insert into diet values('h111','정원진','월','밥','야채','닭가슴살',300) ;
+insert into diet values('h111','정원진','화','밥','야채','닭가슴살',300) ;
+insert into diet values('h111','정원진','수','밥','야채','닭가슴살',300) ;
+
+insert into member_health values('h111','윗몸일으키기','완료') ;
+
+insert into member_change values('h111', '정원진','변화:/2020/5/13', 178, 65, 20.2) ;
+
+insert into member_goal values('h111', '헬스','주3회', '0','0','x','0','x','x','x') ;
+commit;
+
+select *from admin;
+select *from member_;
+select *from health;
+select *from trainer;
+select *from diet;
+select *from member_goal;
+select *from member_change;
+
+

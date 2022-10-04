@@ -1,0 +1,18 @@
+create table trainer
+(
+	user_id   		varchar(10) 	not null,
+   	user_name     varchar(20) 	not null,
+ 	health_name     varchar(20)    not null,
+	health_set	    int  	not null,
+ 	health_count    int     not null,
+	health_time     int   not null,
+	work_check boolean DEFAULT NULL,
+    
+    constraint  fk_trainer1 foreign key(user_id) references admin(user_id),
+    constraint  fk_trainer2 foreign key(health_name) references health(health_name)
+);
+
+insert into trainer values('h111','Á¤¿øÁø','À­¸öÀÏÀ¸Å°±â',4,12,60,0) ;
+insert into trainer values('h111','Á¤¿øÁø','ÆÈ±ÁÇôÆì±â',4,12,60,0) ;
+insert into trainer values('h222','±è¿¹Áø','À­¸öÀÏÀ¸Å°±â',4,12,60,0) ;
+insert into trainer values('h222','±è¿¹Áø','ÆÈ±ÁÇôÆì±â',4,12,60,0) ;
