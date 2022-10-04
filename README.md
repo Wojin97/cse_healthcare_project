@@ -29,4 +29,5 @@
 #### 템플릿 메서드 패턴 적용
 ![템플릿](https://user-images.githubusercontent.com/71927210/129739618-cddb9a02-fe49-4a2c-9f0d-e13f4e58e079.png)
 #### 커맨드 패턴 적용
-![커맨드](https://user-images.githubusercontent.com/71927210/129739668-9bfe1228-b221-4bf2-9871-d65b11e3033b.png
+![커맨드](https://user-images.githubusercontent.com/71927210/129739668-9bfe1228-b221-4bf2-9871-d65b11e3033b.png)
+
